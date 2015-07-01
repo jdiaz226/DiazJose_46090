@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Jose Diaz
  * Created on July 1, 2015, 11:02 AM
- * Purpose: Monthly Payment
+ * Purpose: Approximating PI
  */
 
 //System Libraries

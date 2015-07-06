@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Diaz
-   * Created on July 2, 2015, 12:20 PM
+ * Created on July 2, 2015, 12:20 PM
  * Purpose:  What band is the EMS
  */
 

@@ -66,12 +66,12 @@ int main(int argc, char** argv){
     int lScore;              //Lower Section Score
     int uBonus = 0;          //Upper Section Bonus Score
     int option;              //Category on Score Card
-    int nAces;
-    int nTwos;
-    int nThres;
-    int nFors;
-    int nFves;
-    int nSixs;
+    int nAces;               //Number of Aces in final roll
+    int nTwos;               //NUmber of Twos in final roll
+    int nThres;              //Number of Threes in final roll
+    int nFors;               //Number of Fours in final roll
+    int nFves;               //Number of Fives in final roll
+    int nSixs;               //Number of Sixes in final roll
     
     //Set Empty Score Card
     catUsed[1]   = false;

@@ -26,6 +26,19 @@ int main() {
        player_counter++;
    }
    
+   //Outputting the Roster
+    int counter = 0;
+               
+    cout << "Roster" << endl;
+    while(counter < player_counter)
+    {
+        cout << "Player " << counter + 1 << " -- Jersey Number: " << number[counter] << ", Rating: " << player_rating[counter] << endl;
+                   
+        counter++;
+    }
+                
+    cout << endl;
+   
    //Menu
    while(option != 'q')
    {
@@ -44,6 +57,7 @@ int main() {
        {
            case 'a':
            {
+               //Add New Player
                char add_new_player_option = 'y';
                
                cout << endl;
@@ -53,6 +67,7 @@ int main() {
                cin >> jersey_number;
                cout << "Enter the player's rating: " << endl;
                cin >> rating;
+               cout << endl;
                
                number.push_back(jersey_number);
                player_rating.push_back(rating);
@@ -72,6 +87,39 @@ int main() {
            
            case 'd':
            {
+               //Delete a player
+               char delete_player_option = 'y';
+               vector<int> temp_number;
+               
+               cout << endl;
+               
+               while(delete_player_option == 'y' || delete_player_option == 'Y')
+               {
+                   cout << "Enter a jersey number:" << endl;
+                   cin >> jersey_number;
+                   cout << endl;
+                   
+                   int temp_counter = 0;
+                   while(number[temp_counter] != jersey_number)
+                   {
+                       temp_counter++;
+                       cout << temp_counter << endl;
+                   }
+                   
+                   //Temp Vectors
+                   temp_number[0] = number[player_counter];
+                   number[player_counter] = number[temp_counter];
+                   number[temp_counter] = temp_number[0];
+                   number.pop_back();
+                   
+                   
+                   player_counter--;
+                   
+                   cout << "Would you like to delete another player? <Y/N>: " <<endl;
+                   cin >> delete_player_option;
+                   cout << endl;
+               }
+               
                break;
            }
            
@@ -94,7 +142,7 @@ int main() {
                cout << "Roster" << endl;
                while(counter < player_counter)
                {
-                   cout << "Player " << counter + 1 << "-- Jersey Number: " << number[counter] << ", Rating: " << player_rating[counter] << endl;
+                   cout << "Player " << counter + 1 << " -- Jersey Number: " << number[counter] << ", Rating: " << player_rating[counter] << endl;
                    
                    counter++;
                 }

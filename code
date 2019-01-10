@@ -90,6 +90,7 @@ int main() {
                //Delete a player
                char delete_player_option = 'y';
                vector<int> temp_number;
+               vector<int> temp_rating;
                
                cout << endl;
                
@@ -103,14 +104,18 @@ int main() {
                    while(number[temp_counter] != jersey_number)
                    {
                        temp_counter++;
-                       cout << temp_counter << endl;
                    }
                    
                    //Temp Vectors
-                   temp_number[0] = number[player_counter];
-                   number[player_counter] = number[temp_counter];
+                   temp_number.push_back(number[player_counter - 1]);
+                   number[player_counter - 1] = number[temp_counter];
                    number[temp_counter] = temp_number[0];
                    number.pop_back();
+                   
+                   temp_rating.push_back(player_rating[player_counter - 1]);
+                   player_rating[player_counter - 1] = player_rating[temp_counter];
+                   player_rating[temp_counter] = temp_rating[0];
+                   player_rating.pop_back();
                    
                    
                    player_counter--;

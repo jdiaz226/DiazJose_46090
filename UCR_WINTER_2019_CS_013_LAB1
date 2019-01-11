@@ -1,6 +1,24 @@
+/**
+ * Course: CS 013 Winter 2019
+ *
+ * First Name: Jose
+ * Last Name: Diaz
+ * Username: jdiaz078
+ * email address: jdiaz078@ucr.edu
+ *
+ *
+ * Assignment: Lab 1
+ * Filename : roster.cc
+ *
+ * I hereby certify that the contents of this file represent
+ * my own original individual work. Nowhere herein is there 
+ * code from any outside resources such as another individual,
+ * a website, or publishings unless specifically designated as
+ * permissible by the instructor or TA.
+ */ 
+
 #include <iostream>
 #include <vector>
-// FIXME include vector library
 using namespace std;
 
 int main() {
@@ -130,11 +148,59 @@ int main() {
            
            case 'u':
            {
+               //Updating Player Rating
+               cout << endl;
+               char update_player_choice = 'y';
+               while(update_player_choice == 'y' || update_player_choice == 'Y')
+               {
+                   cout << "Enter a jersey number: " << endl;
+                   cin >> jersey_number;
+                   cout << "Enter a new rating for the player: " << endl;
+                   cin >> rating;
+                   cout << endl;
+                   
+                   int temp_counter = 0;
+                   while(number[temp_counter] != jersey_number)
+                   {
+                       temp_counter++;
+                   }
+                   
+                   player_rating[temp_counter] = rating;
+                   
+                   cout << "Would you like to update the rating for another player? <Y/N>: ";
+                   cin >> update_player_choice;
+                   cout << endl;
+                   
+               }
+               
                break;
            }
            
            case 'r':
            {
+               //Output players above a rating
+               cout << endl;
+               cout << "Enter a rating" << endl;
+               cin >> rating;
+               cout << endl;
+               
+               cout << "ABOVE " << rating << endl;
+               
+               int temp_counter = 0;
+               int display_counter = 0;
+               while(temp_counter < player_counter)
+               {
+                   if(player_rating[temp_counter] > rating)
+                   {
+                       cout << "Player " << display_counter + 1 << " -- Jersey number: " << number[temp_counter] << ", Rating: " << player_rating[temp_counter] << endl;
+                       display_counter++;
+                   }
+                   
+                   temp_counter++;
+               }
+               
+               cout << endl;
+               
                break;
            }
            
